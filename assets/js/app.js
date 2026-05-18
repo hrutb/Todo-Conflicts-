@@ -23,9 +23,10 @@ function template(arr){
    arr.forEach(ele=>{ 
          res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
                                     <strong>${ele.todoItem}</strong>
-                                      <i class="fa-solid fa-pen-to-square text-primary"></i>
-                                      <i class="fa-solid fa-trash text-danger"></i>
-                                      
+                                    <div>
+                                      <i class="fa-solid fa-pen-to-square fa-2x text-primary"></i>
+                                      <i class="fa-solid fa-trash fa-2x text-danger"></i>
+                                     </div> 
                                  </li>`
    })
 
