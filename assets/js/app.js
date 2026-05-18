@@ -16,6 +16,12 @@ let todoArr = [
 
 const todoContainer= document.getElementById('todoContainer')
 
+const todoItemControl= document.getElementById('todoItem')
+
+const addTodo=document.getElementById('AddTodo')
+
+const updateTodo=document.getElementById('updateTodo');
+
 
 function template(arr){
    let res =' '; 
@@ -23,8 +29,10 @@ function template(arr){
    arr.forEach(ele=>{ 
          res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
                                     <strong>${ele.todoITem}</strong>
-                                      <i class="fa-solid fa-pen-to-square text-primary"></i>
-                                      <i class="fa-solid fa-trash text-danger"></i>
+                                      <i onclick='onEdit(this)' 
+                                      
+                                      class="fa-solid fa-pen-to-square text-primary"></i>
+                                      <i  class="fa-solid fa-trash text-danger"></i>
                                       
                                  </li>`
    })
@@ -32,4 +40,19 @@ function template(arr){
  todoContainer.innerHTML =res ; 
 } 
 
+
 template(todoArr)
+
+
+function onEdit(ele){
+  let EDIT_ID=ele.closest("li").id
+  let EDIT_OBJ=todoArr.find(t=>t.todoId === EDIT_ID) ;
+
+  todoItemControl.value=EDIT_OBJ.todoItem
+
+  addTodo.classList.add('d-none');
+
+  updateTodo.classList.remove('d-none')
+
+
+}
