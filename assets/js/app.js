@@ -14,14 +14,25 @@ let todoArr = [
 
 ];  
 
-const todoContainer= document.getElementById('todoContainer')
+// localStorage.setItem('todoArr', JSON.stringfy('todoArr')
 
 
-function template(arr){
-   let res =''; 
-    
-   arr.forEach(ele=>{ 
-         res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
+const todoForm = document.getElementById('todoForm');
+
+const todoContainer = document.getElementById('todoContainer');
+const todoItemControl = document.getElementById('todoItem');
+const addTodo = document.getElementById('addTodo');
+const updateTodo = document.getElementById('updateTodo');
+
+// let todoArr = [] ;
+
+// todoArr = JSON.parse(localStorage.getItem('todoArr'));
+
+function templating (arr){
+  let result ='';
+
+  arr.forEach(ele=>{ 
+         result +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
                                     <strong>${ele.todoItem}</strong>
                                     <div>
                                       <i class="fa-solid fa-pen-to-square fa-2x text-primary"></i>
@@ -29,8 +40,43 @@ function template(arr){
                                      </div> 
                                  </li>`
    })
+todoContainer.innerHTML = result;
 
- todoContainer.innerHTML =res ; 
-} 
+}
 
-template(todoArr)
+templating(todoArr);
+
+function ontodoSubmit(ele){
+  // console.log(ele);
+  ele.preventDefault()
+
+
+  let todo_obj = {
+  todoItem : todoItemControl.value,
+  todoId : Date.now().toString()
+  }
+
+  console.log(todo_obj);
+
+  todoArr.push(todo_obj);
+
+  // localStorage.setItem('todoArr', JSON.stringify(todoarr));
+
+
+  let li = document.createElement('li');
+  li.className = 'list-group-item d-flex justify-content-between';
+
+  li.id = todo_obj.todoId;
+  li.innerHTML=`<strong>${todo_obj.todoItem}</strong>
+  <div> <i type = 'button' onclick = 'onEdit(this)' class
+  ='fa-solid fa-pen-to-square text-primary fa-2x'></i>
+  <i type = 'button' onclick = 'onRemove(this)' class
+  ='fa-solid fa-trash text-danger fa-2x'></i>
+  `
+
+  todoContainer.append(li);
+
+  todoForm.reset();
+}
+
+todoForm.addEventListener('submit',ontodoSubmit)
