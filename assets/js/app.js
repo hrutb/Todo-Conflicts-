@@ -18,11 +18,11 @@ const todoContainer= document.getElementById('todoContainer')
 
 
 function template(arr){
-   let res =' '; 
+   let res =''; 
     
    arr.forEach(ele=>{ 
          res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
-                                    <strong>${ele.todoITem}</strong>
+                                    <strong>${ele.todoItem}</strong>
                                       <i class="fa-solid fa-pen-to-square text-primary"></i>
                                       <i class="fa-solid fa-trash text-danger"></i>
                                       
