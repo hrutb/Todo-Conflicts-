@@ -27,13 +27,12 @@ function template(arr){
    let result =' '; 
     
    arr.forEach(ele=>{ 
-         res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
+         result +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
                                     <strong>${ele.todoItem}</strong>
-                                      <i onclick='onEdit(this)' 
-                                      
-                                      class="fa-solid fa-pen-to-square text-primary"></i>
+                                    <div>  
+                                    <i onclick='onEdit(this)'  class="fa-solid fa-pen-to-square text-primary"></i>
                                       <i  class="fa-solid fa-trash text-danger"></i>
-                                      
+                                    </div>  
                                  </li>`
    })
 todoContainer.innerHTML = result;
