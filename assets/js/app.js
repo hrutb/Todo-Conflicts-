@@ -14,7 +14,7 @@ let todoArr = [
 
 ];  
 
-// localStorage.setItem('todoArr', JSON.stringfy('todoArr')
+// localStorage.setItem('todoArr', JSON.stringify('todoArr')
 
 
 const todoForm = document.getElementById('todoForm');
@@ -79,4 +79,5 @@ function ontodoSubmit(ele){
   todoForm.reset();
 }
 
+     
 todoForm.addEventListener('submit',ontodoSubmit)
