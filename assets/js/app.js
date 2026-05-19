@@ -46,11 +46,16 @@ template(todoArr)
 function ontodoSubmit(ele){
   // console.log(ele);
   ele.preventDefault()
- 
 
 
 
 
+
+
+
+
+
+  
   let li = document.createElement('li');
   li.className = 'list-group-item d-flex justify-content-between';
 
