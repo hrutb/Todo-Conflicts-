@@ -40,7 +40,7 @@ todoContainer.innerHTML = result;
 }
 
 
-
+template(todoArr)
 
 
 function ontodoSubmit(ele){
