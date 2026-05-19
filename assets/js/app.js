@@ -61,9 +61,6 @@ function ontodoSubmit(ele){
 
   todoArr.push(todo_obj);
 
-
-
-
   let li = document.createElement('li');
   li.className = 'list-group-item d-flex justify-content-between';
 
