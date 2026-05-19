@@ -14,7 +14,7 @@ let todoArr = [
 
 ];  
 
-// localStorage.setItem('todoArr', JSON.stringfy('todoArr')
+// localStorage.setItem('todoArr', JSON.stringify('todoArr')
 
 const todoItemControl= document.getElementById('todoItem')
 
@@ -40,18 +40,39 @@ todoContainer.innerHTML = result;
 }
 
 
-template(todoArr)
 
+
+
+function ontodoSubmit(ele){
+  // console.log(ele);
+  ele.preventDefault()
+ 
 
 function onEdit(ele){
   let EDIT_ID=ele.closest("li").id
   let EDIT_OBJ=todoArr.find(t=>t.todoId === EDIT_ID) ;
 
-  todoItemControl.value=EDIT_OBJ.todoItem
 
   addTodo.classList.add('d-none');
 
-  updateTodo.classList.remove('d-none')
 
 
+  let li = document.createElement('li');
+  li.className = 'list-group-item d-flex justify-content-between';
+
+  li.id = todo_obj.todoId;
+  li.innerHTML=`<strong>${todo_obj.todoItem}</strong>
+  <div> <i type = 'button' onclick = 'onEdit(this)' class
+  ='fa-solid fa-pen-to-square text-primary fa-2x'></i>
+  <i type = 'button' onclick = 'onRemove(this)' class
+  ='fa-solid fa-trash text-danger fa-2x'></i>
+  `
+
+  todoContainer.append(li);
+
+  todoForm.reset();
+  
 }
+
+     
+todoForm.addEventListener('submit',ontodoSubmit)
