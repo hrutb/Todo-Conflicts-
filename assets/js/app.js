@@ -70,7 +70,7 @@ function ontodoSubmit(ele){
   todoContainer.append(li);
 
   todoForm.reset();
-  
+
 }
 
 
