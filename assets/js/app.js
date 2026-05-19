@@ -70,13 +70,15 @@ function ontodoSubmit(ele){
   ='fa-solid fa-pen-to-square text-primary '></i>
   <i type = 'button' onclick = 'onRemove(this)' class
   ='fa-solid fa-trash text-danger '></i>
+
+  
   `
 
   todoContainer.append(li);
 
   todoForm.reset();
 
-  
+
 
 }
 
