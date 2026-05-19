@@ -46,16 +46,15 @@ template(todoArr)
 function ontodoSubmit(ele){
   // console.log(ele);
   ele.preventDefault()
+ 
+  let todo_obj = {
+  todoItem : todoItemControl.value,
+  todoId : Date.now().toString()
+  }
 
 
+  todoArr.push(todo_obj);
 
-
-
-
-
-
-
-  
   let li = document.createElement('li');
   li.className = 'list-group-item d-flex justify-content-between';
 
