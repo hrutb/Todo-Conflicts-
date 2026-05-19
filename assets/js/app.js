@@ -34,3 +34,16 @@ function template(arr){
 } 
 
 template(todoArr)
+
+
+function updateTodo(updatedTodo) {
+
+  let getIndex = todoArr.findIndex(todo => {
+    return todo.todoId === updatedTodo.todoId;
+  });
+
+  if (getIndex !== -1) {
+    todoArr[getIndex].todoItem = updatedTodo.todoItem;
+  }
+
+}
