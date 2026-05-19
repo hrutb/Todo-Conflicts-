@@ -35,15 +35,16 @@ function template(arr){
 
 template(todoArr)
 
+updateTodo(updatedTodo) {
 
-function updateTodo(updatedTodo) {
-
-  let getIndex = todoArr.findIndex(todo => {
+  let getIndex = this.todoArr.findIndex(todo => {
     return todo.todoId === updatedTodo.todoId;
   });
 
   if (getIndex !== -1) {
-    todoArr[getIndex].todoItem = updatedTodo.todoItem;
+
+    this.todoArr[getIndex].todoItem = updatedTodo.todoItem;
+
   }
 
 }
