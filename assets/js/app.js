@@ -28,7 +28,7 @@ function template(arr){
     
    arr.forEach(ele=>{ 
          res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
-                                    <strong>${ele.todoITem}</strong>
+                                    <strong>${ele.todoItem}</strong>
                                       <i onclick='onEdit(this)' 
                                       
                                       class="fa-solid fa-pen-to-square text-primary"></i>
