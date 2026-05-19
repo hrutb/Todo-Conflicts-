@@ -53,6 +53,13 @@ function ontodoSubmit(ele){
   // console.log(ele);
   ele.preventDefault()
  
+  let todo_obj = {
+  todoItem : todoItemControl.value,
+  todoId : Date.now().toString()
+  }
+
+
+  todoArr.push(todo_obj);
 
 
 
