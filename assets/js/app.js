@@ -76,6 +76,8 @@ function ontodoSubmit(ele){
 
   todoForm.reset();
 
+  
+
 }
 
      
