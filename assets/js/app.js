@@ -24,7 +24,7 @@ const updateTodo=document.getElementById('updateTodo');
 
 
 function template(arr){
-   let res =' '; 
+   let result =' '; 
     
    arr.forEach(ele=>{ 
          res +=`<li  id="${ele.todoId}" class="list-group-item d-flex justify-content-between">
