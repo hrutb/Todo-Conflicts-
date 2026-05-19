@@ -48,12 +48,6 @@ function ontodoSubmit(ele){
   ele.preventDefault()
  
 
-function onEdit(ele){
-  let EDIT_ID=ele.closest("li").id
-  let EDIT_OBJ=todoArr.find(t=>t.todoId === EDIT_ID) ;
-
-
-  addTodo.classList.add('d-none');
 
 
 
@@ -74,5 +68,14 @@ function onEdit(ele){
   
 }
 
+
+function onEdit(ele){
+  let EDIT_ID=ele.closest("li").id
+  let EDIT_OBJ=todoArr.find(t=>t.todoId === EDIT_ID) ;
+
+
+  addTodo.classList.add('d-none');
+      updateTodo.classList.remove('d-none')
+}
      
-todoForm.addEventListener('submit',ontodoSubmit)
+todoForm.addEventListener('submit',ontodoSubmit);
