@@ -46,21 +46,22 @@ todoContainer.innerHTML = result;
 
 templating(todoArr);
 
+
+
+
 function ontodoSubmit(ele){
   // console.log(ele);
   ele.preventDefault()
-
+ 
 
   let todo_obj = {
   todoItem : todoItemControl.value,
   todoId : Date.now().toString()
   }
 
-  console.log(todo_obj);
 
   todoArr.push(todo_obj);
 
-  // localStorage.setItem('todoArr', JSON.stringify(todoarr));
 
 
   let li = document.createElement('li');
@@ -77,6 +78,7 @@ function ontodoSubmit(ele){
   todoContainer.append(li);
 
   todoForm.reset();
+  
 }
 
      
